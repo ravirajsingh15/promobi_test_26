@@ -18,7 +18,8 @@ RSpec.describe Tutor, type: :model do
   		expect(Tutor.new(name: "Raviraj Singh", age: 23)).to_not be_valid
   	end
   	it "is valid with name and experience" do
-  		expect(Tutor.new(name: "Raviraj Singh", experience: 1)).to be_valid
+  		course = Course.create(name: "course1", subject: "Math")
+      expect(Tutor.new(name: "tutor2", experience: 1, course_id: course.id)).to be_valid
   	end
 
 	end

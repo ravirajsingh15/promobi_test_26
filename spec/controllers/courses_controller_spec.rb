@@ -19,8 +19,6 @@ describe CoursesController do
 
   it "should list all the courses" do
     get :index
-    json_response = response
-    parsed_body = JSON.parse(json_response.body).with_indifferent_access
-    expect(json_response.status).to equal(200)
+    expect(response.status).to equal(200)
   end
 end
